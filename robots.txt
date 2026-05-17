@@ -1,0 +1,11 @@
+# robots.txt — Privara (https://privara.co.in)
+# Allow all crawlers, disallow nothing.
+
+User-agent: *
+Allow: /
+
+# Exclude 404 page from crawling
+Disallow: /404.html
+
+# Sitemap location
+Sitemap: https://privara.co.in/sitemap.xml

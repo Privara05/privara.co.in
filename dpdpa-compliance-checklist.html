@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>DPDPA Compliance Checklist 2025 | Privara</title>
+  <meta name="description" content="A structured DPDPA compliance checklist covering all eight control areas — consent, privacy notice, vendor agreements, data flows, rights, retention, security, and breach preparedness." />
+  <meta name="keywords" content="DPDPA compliance checklist, DPDPA checklist India, DPDPA audit checklist, DPDPA 2025 checklist, data protection checklist India" />
+  <meta name="author" content="Privara" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://privara.co.in/dpdpa-compliance-checklist" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="Privara" />
+  <meta property="og:url"         content="https://privara.co.in/dpdpa-compliance-checklist" />
+  <meta property="og:title"       content="DPDPA Compliance Checklist 2025 | Privara" />
+  <meta property="og:description" content="A structured DPDPA compliance checklist covering all eight control areas — built directly on the DPDPA Act 2023 and Rules 2025." />
+  <meta property="og:image"       content="https://privara.co.in/assets/og-default.png" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="DPDPA Compliance Checklist 2025 | Privara" />
+  <meta name="twitter:description" content="A structured DPDPA compliance checklist covering all eight control areas — built directly on the DPDPA Act 2023 and Rules 2025." />
+  <meta name="twitter:image"       content="https://privara.co.in/assets/og-default.png" />
+
+  <link rel="icon"             type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon"             type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180"                href="assets/apple-touch-icon.png" />
+  <link rel="manifest"                                         href="site.webmanifest" />
+  <meta name="theme-color" content="#0A1F3D" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" />
+  <link rel="stylesheet" href="design-system.css" />
+
+  <style>
+    /* ── Page hero ─────────────────────────────────────── */
+    .page-hero {
+      background: var(--navy);
+      padding: calc(var(--nav-h) + 72px) 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 60px;
+      background: var(--bg-white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .page-hero__label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .page-hero h1 { color: #fff; max-width: 760px; margin-bottom: 20px; }
+    .page-hero__sub { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,0.65); max-width: 620px; margin-bottom: 32px; }
+    .page-hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .page-hero__meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+    .page-hero__meta-item svg { color: var(--gold); }
+
+    /* ── Disclaimer callout ────────────────────────────── */
+    .disclaimer {
+      background: var(--bg-gold-tint);
+      border: 1px solid var(--gold-muted);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+    .disclaimer strong { color: var(--navy); }
+
+    /* ── Control area block ────────────────────────────── */
+    .control-area {
+      margin-bottom: 56px;
+    }
+    .control-area__header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .control-area__num {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .control-area__title {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .control-area__ref {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Checklist items ───────────────────────────────── */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-light);
+      transition: background 0.2s;
+      cursor: default;
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item:hover { background: var(--bg-section); }
+    .checklist-item__box {
+      width: 20px; height: 20px;
+      border: 1.5px solid var(--border-muted);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      background: #fff;
+    }
+    .checklist-item__content { flex: 1; }
+    .checklist-item__text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .checklist-item__sub {
+      font-size: 13px;
+      line-height: 1.60;
+      color: var(--text-muted);
+      text-align: justify;
+      text-align-last: left;
+    }
+    .checklist-item__severity {
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+    .severity--critical { background: rgba(192,57,43,0.10); color: #c0392b; }
+    .severity--high     { background: rgba(230,126,34,0.10); color: #d35400; }
+    .severity--medium   { background: rgba(41,128,185,0.10); color: #2980b9; }
+
+    /* ── Gap warning box ───────────────────────────────── */
+    .gap-warning {
+      margin-top: 16px;
+      background: var(--bg-section);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      text-align: justify;
+      text-align-last: left;
+    }
+    .gap-warning strong { color: var(--navy); }
+
+    /* ── Article layout ────────────────────────────────── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; } }
+
+    /* ── TOC sidebar ───────────────────────────────────── */
+    .toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+      height: fit-content;
+      align-self: start;
+      background: var(--bg-section);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .toc__title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .toc__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+    .toc__item a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .toc__item a:hover { background: var(--bg-gold-tint); color: var(--navy); }
+    .toc__item-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      width: 16px;
+      flex-shrink: 0;
+    }
+    .toc__divider { height: 1px; background: var(--border-light); margin: 12px 0; }
+    .toc__cta { margin-top: 4px; }
+    @media (max-width: 1024px) { .toc { display: none; } }
+
+    /* ── CTA block ──────────────────────────────────────── */
+    .page-cta { background: var(--navy); border-radius: 16px; padding: 56px; text-align: center; }
+    .page-cta h2 { color: #fff; margin-bottom: 12px; }
+    .page-cta p { color: rgba(255,255,255,0.60); font-size: 17px; max-width: 520px; margin: 0 auto 32px; line-height: 1.75; }
+    .page-cta-trust { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      z-index: 9998;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+    }
+  </style>
+
+  <!-- Schema: Organization -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Privara","url":"https://privara.co.in","email":"contact@privara.co.in","logo":"https://privara.co.in/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}}
+  </script>
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"DPDPA Compliance Checklist 2025","description":"A structured DPDPA compliance checklist covering all eight control areas — consent, privacy notice, vendor agreements, data flows, rights, retention, security, and breach preparedness.","author":{"@type":"Organization","name":"Privara","url":"https://privara.co.in"},"publisher":{"@type":"Organization","name":"Privara","url":"https://privara.co.in","logo":{"@type":"ImageObject","url":"https://privara.co.in/assets/logo.png"}},"url":"https://privara.co.in/dpdpa-compliance-checklist","inLanguage":"en-IN"}
+  </script>
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privara.co.in"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://privara.co.in/resources"},{"@type":"ListItem","position":3,"name":"DPDPA Compliance Checklist","item":"https://privara.co.in/dpdpa-compliance-checklist"}]}
+  </script>
+</head>
+
+<body class="page-body">
+  <a class="skip-link" href="#main-content" style="position:absolute;top:-40px;left:0;background:var(--navy);color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top 0.2s;font-size:14px;font-weight:500;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner" style="max-width: 100%; padding-inline: 64px;">
+      <a href="index.html" class="nav__logo" aria-label="Privara — Home">
+        <img src="assets/logo-navbar.png" alt="Privara" width="120" height="40"
+             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <span style="display:none;align-items:center;gap:6px;font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--navy);letter-spacing:-0.01em;">PRIVARA</span>
+      </a>
+      <ul class="nav__menu" role="list">
+        <li class="nav__item">
+          <a href="#" class="nav__link" aria-haspopup="true">Services <svg class="nav__chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dropdown" role="menu">
+            <a href="dpdpa-readiness-review.html"       class="nav__dropdown-link" role="menuitem">Readiness Review</a>
+            <a href="operational-audit.html"  class="nav__dropdown-link" role="menuitem">Operational Audit</a>
+            <a href="remediation.html"   class="nav__dropdown-link" role="menuitem">Remediation Plan</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link" aria-haspopup="true">Industries <svg class="nav__chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dropdown" role="menu">
+             <a href="dpdpa-compliance-for-startups.html"   class="nav__dropdown-link" role="menuitem">Startups</a>
+            <a href="dpdpa-compliance-for-fintech.html"    class="nav__dropdown-link" role="menuitem">Fintech</a>
+            <a href="dpdpa-compliance-for-saas.html"       class="nav__dropdown-link" role="menuitem">SaaS</a>
+            <a href="dpdpa-compliance-for-ecommerce.html"  class="nav__dropdown-link" role="menuitem">E-commerce</a>
+            <a href="dpdpa-compliance-for-edtech.html"     class="nav__dropdown-link" role="menuitem">EdTech</a>
+            <a href="dpdpa-compliance-for-healthcare.html" class="nav__dropdown-link" role="menuitem">Healthcare</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link nav__link--active" aria-haspopup="true">Resources <svg class="nav__chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dropdown" role="menu">
+           <a href="what-is-dpdpa-compliance.html"   class="nav__dropdown-link" role="menuitem">What is DPDPA</a>
+            <a href="dpdpa-compliance-checklist.html" class="nav__dropdown-link" role="menuitem">Compliance Checklist</a>
+            <a href="dpdpa-penalty.html"              class="nav__dropdown-link" role="menuitem">Penalty Guide</a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="about.html"   class="nav__link">About</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__cta"><a href="/contact" class="btn btn-primary btn-sm">Book a Scoping Conversation</a></div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobile-nav">
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Services</div>
+       <a href="dpdpa-readiness-review.html"       class="nav__mobile-link">Readiness Review</a>
+        <a href="operational-audit.html"  class="nav__mobile-link">Operational Compliance Audit</a>
+        <a href="remediation.html"   class="nav__mobile-link">Remediation &amp; Governance Plan</a>
+      </div>
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Industries</div>
+        <a href="dpdpa-compliance-for-startups.html"   class="nav__mobile-link">Startups</a>
+        <a href="dpdpa-compliance-for-fintech.html"    class="nav__mobile-link">Fintech</a>
+        <a href="dpdpa-compliance-for-saas.html"       class="nav__mobile-link">SaaS</a>
+        <a href="dpdpa-compliance-for-ecommerce.html"  class="nav__mobile-link">E-commerce</a>
+        <a href="dpdpa-compliance-for-edtech.html"     class="nav__mobile-link">EdTech</a>
+        <a href="dpdpa-compliance-for-healthcare.html" class="nav__mobile-link">Healthcare</a>
+      </div>
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Resources</div>
+        <a href="what-is-dpdpa-compliance.html"   class="nav__mobile-link">What is DPDPA</a>
+        <a href="dpdpa-compliance-checklist.html" class="nav__mobile-link">Compliance Checklist</a>
+        <a href="dpdpa-penalty.html"              class="nav__mobile-link">Penalty Guide</a>
+      </div>
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Company</div>
+        <a href="about.html"   class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+      </div>
+      <a href="contact.html" class="btn btn-primary nav__mobile-cta">Book a Scoping Conversation</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══ HERO ═══════════════════════════════════════════ -->
+    <section class="page-hero" aria-label="DPDPA Compliance Checklist">
+      <div class="container">
+        <div class="page-hero__label">Checklist</div>
+        <h1>DPDPA Compliance Checklist</h1>
+        <p class="page-hero__sub">Eight control areas. Built directly on the DPDPA Act 2023 and Rules 2025 — not adapted from a generic privacy framework.</p>
+        <div class="page-hero__meta">
+          <span class="page-hero__meta-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a4.5 4.5 0 00-4.5 4.5C2.5 9.5 7 13 7 13s4.5-3.5 4.5-7.5A4.5 4.5 0 007 1z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Privara
+          </span>
+          <span class="page-hero__meta-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5h12" stroke="currentColor" stroke-width="1.2"/><path d="M4 1v2M10 1v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            DPDPA Act 2023 &amp; Rules 2025
+          </span>
+          <span class="page-hero__meta-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z" stroke="currentColor" stroke-width="1.2"/><path d="M5 6h4M5 8.5h2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            8 control areas · 40 checklist items
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ CHECKLIST BODY ══════════════════════════════════ -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="article-layout">
+
+          <!-- MAIN CONTENT -->
+          <div>
+
+        <!-- Author byline -->
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--border-light);">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="white" stroke-width="1.3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);">Privara</div>
+            <div style="font-size:12px;color:var(--text-light);">DPDPA Compliance Advisory &nbsp;·&nbsp; DPDPA Act 2023 &amp; Rules 2025 &nbsp;·&nbsp; 8 control areas · 40 checklist items</div>
+          </div>
+        </div>
+            <div class="disclaimer">
+              <strong>How to use this checklist:</strong> Each item represents an operational requirement under the DPDPA Act 2023 or Rules 2025. A self-assessment against this checklist tells you what your team believes is in place. An independent operational review tells you what is actually in place. Use this checklist as an orientation — not as a compliance certificate. Items are severity-rated: <span style="color:#c0392b; font-weight:600;">Critical</span>, <span style="color:#d35400; font-weight:600;">High</span>, <span style="color:#2980b9; font-weight:600;">Medium</span>.
+            </div>
+
+
+            <!-- AREA 1 -->
+            <div class="control-area" id="area-1">
+              <div class="control-area__header">
+                <div class="control-area__num">1</div>
+                <div class="control-area__title">Consent Architecture</div>
+                <div class="control-area__ref">Section 6</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Consent is obtained through an affirmative action by the data principal</div>
+                    <div class="checklist-item__sub">No pre-ticked boxes, no implied consent, no consent via inaction. The data principal must actively indicate agreement.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Consent is obtained via a notice separate from terms of service</div>
+                    <div class="checklist-item__sub">Consent bundled into terms acceptance does not constitute valid consent under Section 6.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Each processing purpose has a separate, specific consent mechanism</div>
+                    <div class="checklist-item__sub">One checkbox covering multiple purposes — marketing, analytics, product improvement — is not compliant.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A mechanism exists for data principals to withdraw consent</div>
+                    <div class="checklist-item__sub">Withdrawal must be as easy to exercise as giving consent. A buried settings page or email-only process does not meet this standard.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Consent records are maintained and can be demonstrated</div>
+                    <div class="checklist-item__sub">You must be able to show that consent was obtained, for what purpose, and when — for each data principal.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> Consent collected via pre-ticked checkbox or bundled with terms acceptance — invalidating all processing based on that consent.</div>
+            </div>
+
+
+            <!-- AREA 2 -->
+            <div class="control-area" id="area-2">
+              <div class="control-area__header">
+                <div class="control-area__num">2</div>
+                <div class="control-area__title">Privacy Notice</div>
+                <div class="control-area__ref">Section 5</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Notice specifies the personal data being collected</div>
+                    <div class="checklist-item__sub">Broad categories like "your information" are not sufficient. The notice must identify what data is specifically collected.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Notice specifies the purpose of processing for each type of data</div>
+                    <div class="checklist-item__sub">Each category of data must be linked to a specific, named purpose — not a general statement.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Notice explains how data principal rights can be exercised</div>
+                    <div class="checklist-item__sub">The mechanism for accessing, correcting, and erasing data must be described and accessible.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Notice identifies the grievance officer and contact details</div>
+                    <div class="checklist-item__sub">A named grievance officer with a reachable contact mechanism is required — not a generic support email.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Notice reflects actual system behaviour — not intended practices</div>
+                    <div class="checklist-item__sub">GDPR-adapted notices frequently describe what the organisation intends, not what the systems do. The notice must reflect operational reality.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> Privacy notice adapted from a GDPR template that does not meet the Act's specific disclosure requirements for Indian data principals.</div>
+            </div>
+
+
+            <!-- AREA 3 -->
+            <div class="control-area" id="area-3">
+              <div class="control-area__header">
+                <div class="control-area__num">3</div>
+                <div class="control-area__title">Vendor &amp; Processor Agreements</div>
+                <div class="control-area__ref">Section 8(3)</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">All third-party tools processing personal data have been identified</div>
+                    <div class="checklist-item__sub">Analytics, CRM, email, payments, cloud storage, customer support, and any other tool touching user data must be inventoried.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A Data Processing Agreement exists with each processor</div>
+                    <div class="checklist-item__sub">Standard commercial SaaS terms do not satisfy this requirement. A written contract governing data handling must exist for each processor.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Processor agreements prohibit secondary use of submitted data</div>
+                    <div class="checklist-item__sub">Many SaaS tools' default terms permit use of submitted data for their own product improvement. This is a violation if not contractually restricted.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Processor agreements include breach notification obligations</div>
+                    <div class="checklist-item__sub">Processors must be contractually required to notify you of any breach involving your users' data within a defined timeframe.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Processor agreements require data deletion on contract termination</div>
+                    <div class="checklist-item__sub">When you stop using a processor, your users' data must be deleted from their systems — not retained under their default terms.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> Analytics and CRM tools processing user data under standard commercial agreements — no Data Processing Agreement in place.</div>
+            </div>
+
+
+            <!-- AREA 4 -->
+            <div class="control-area" id="area-4">
+              <div class="control-area__header">
+                <div class="control-area__num">4</div>
+                <div class="control-area__title">Data Flows &amp; Purpose Limitation</div>
+                <div class="control-area__ref">Section 6(1)</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Personal data is only processed for purposes disclosed at collection</div>
+                    <div class="checklist-item__sub">Using data for analytics, marketing, or product improvement that was not disclosed and consented to at the point of collection is a violation.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Data flows to third parties are disclosed in the privacy notice</div>
+                    <div class="checklist-item__sub">Every third-party service that receives personal data must be identified in the notice — by name or category at minimum.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Only the minimum data necessary for each purpose is collected</div>
+                    <div class="checklist-item__sub">Data minimisation is an implicit requirement under the Act. Collecting more data than the stated purpose requires creates additional compliance exposure.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--medium">Medium</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A data flow map exists covering all personal data in the organisation</div>
+                    <div class="checklist-item__sub">You cannot manage what you cannot see. A documented data flow map is the foundation of operational compliance.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--medium">Medium</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> Personal data passed to analytics and marketing tools for purposes not disclosed in the privacy notice.</div>
+            </div>
+
+
+            <!-- AREA 5 -->
+            <div class="control-area" id="area-5">
+              <div class="control-area__header">
+                <div class="control-area__num">5</div>
+                <div class="control-area__title">Data Principal Rights</div>
+                <div class="control-area__ref">Sections 11–13</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A mechanism exists for data principals to request access to their data</div>
+                    <div class="checklist-item__sub">The mechanism must be accessible within the product or service — not buried in documentation or requiring a legal request.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A mechanism exists for data principals to correct inaccurate data</div>
+                    <div class="checklist-item__sub">Users must be able to update or correct their personal data. Read-only profile pages do not satisfy this requirement.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Data erasure propagates across all systems and processors</div>
+                    <div class="checklist-item__sub">Account deactivation is not erasure. When a user requests deletion, data must be erased from all databases, analytics tools, email systems, and processors.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Rights requests are fulfilled within prescribed timelines</div>
+                    <div class="checklist-item__sub">The Rules prescribe response timelines for each type of rights request. You must have an operational process to meet these timelines consistently.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A grievance officer is appointed and reachable</div>
+                    <div class="checklist-item__sub">A named individual must be designated as grievance officer — with contact details published in the privacy notice and accessible in the product.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> Account deletion triggering deactivation — not actual data erasure across all systems and processors.</div>
+            </div>
+
+
+            <!-- AREA 6 -->
+            <div class="control-area" id="area-6">
+              <div class="control-area__header">
+                <div class="control-area__num">6</div>
+                <div class="control-area__title">Data Retention &amp; Erasure</div>
+                <div class="control-area__ref">Section 8(7)</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A documented retention schedule exists for each data category</div>
+                    <div class="checklist-item__sub">Each type of personal data must have a defined retention period tied to its processing purpose — not "we keep it indefinitely."</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Personal data is erased when the processing purpose is fulfilled</div>
+                    <div class="checklist-item__sub">Once the purpose for which data was collected no longer exists, the data must be erased — automatically or through a documented process.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Consent withdrawal triggers a defined erasure process</div>
+                    <div class="checklist-item__sub">When a data principal withdraws consent, there must be a documented process for erasing their data across all systems within a defined timeframe.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Retention periods are disclosed in the privacy notice</div>
+                    <div class="checklist-item__sub">Users must be informed how long their data will be retained and on what basis.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--medium">Medium</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> No documented retention schedule — data retained indefinitely with no defined deletion process.</div>
+            </div>
+
+
+            <!-- AREA 7 -->
+            <div class="control-area" id="area-7">
+              <div class="control-area__header">
+                <div class="control-area__num">7</div>
+                <div class="control-area__title">Security Safeguards</div>
+                <div class="control-area__ref">Section 8(5)</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Reasonable technical safeguards are implemented for personal data</div>
+                    <div class="checklist-item__sub">Encryption at rest and in transit, access controls, and authentication measures appropriate to the sensitivity and volume of data processed.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Access to personal data is restricted on a need-to-know basis</div>
+                    <div class="checklist-item__sub">Not all team members should have access to all personal data. Role-based access controls must be implemented and documented.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Security measures are reviewed periodically</div>
+                    <div class="checklist-item__sub">Static security configurations that are never reviewed do not constitute "reasonable safeguards" as the threat environment evolves.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--medium">Medium</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Processors are required to maintain equivalent security standards</div>
+                    <div class="checklist-item__sub">Your security obligations extend to your processors. Contracts must require processors to maintain security standards consistent with the Act.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> Security implemented for the product but not governed by documented standards — making "reasonable safeguards" difficult to demonstrate to the Board.</div>
+            </div>
+
+
+            <!-- AREA 8 -->
+            <div class="control-area" id="area-8">
+              <div class="control-area__header">
+                <div class="control-area__num">8</div>
+                <div class="control-area__title">Breach Preparedness &amp; Notification</div>
+                <div class="control-area__ref">Section 8(6)</div>
+              </div>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">A documented breach response process exists</div>
+                    <div class="checklist-item__sub">A policy statement is not a process. You must have a documented, step-by-step response plan that your team can execute in the event of a breach.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Breach notification to the Data Protection Board is understood and planned</div>
+                    <div class="checklist-item__sub">You must notify the Board of any personal data breach. The notification must be made — it cannot be conditional on internal investigation completing first.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Notification to affected data principals is planned and templated</div>
+                    <div class="checklist-item__sub">Affected individuals must be notified of a breach. The notification process and content should be prepared in advance — not designed during the incident.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--critical">Critical</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="checklist-item__box"></div>
+                  <div class="checklist-item__content">
+                    <div class="checklist-item__text">Processors are required to report breaches to you promptly</div>
+                    <div class="checklist-item__sub">Your breach notification obligations include breaches at your processors. Contracts must require processors to notify you of any breach immediately.</div>
+                  </div>
+                  <span class="checklist-item__severity severity--high">High</span>
+                </div>
+              </div>
+              <div class="gap-warning"><strong>Most common gap:</strong> No documented breach response process — organisations that discover a breach are designing their response under pressure, often too slowly.</div>
+            </div>
+
+
+            <!-- NEXT STEPS -->
+            <div style="background:var(--bg-section); border:1px solid var(--border-light); border-radius:12px; padding:36px; margin-top:16px;">
+              <p style="font-size:12px; font-weight:600; letter-spacing:0.10em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">What to do with your results</p>
+              <p style="font-size:16px; line-height:1.80; color:var(--text-muted); margin-bottom:16px; text-align:justify; text-align-last:left;">If you have identified gaps across multiple control areas, the next step is understanding which gaps carry the highest compliance risk — and in what order they should be addressed.</p>
+              <p style="font-size:16px; line-height:1.80; color:var(--text-muted); margin-bottom:20px; text-align:justify; text-align-last:left;">A self-assessment tells you what your team believes is true. An independent operational review — like Privara's <a href="dpdpa-readiness-review.html" style="color:var(--navy); font-weight:600;">DPDPA Readiness Review</a> — tells you what is actually in place, with findings backed by evidence from your live systems and documentation.</p>
+              <a href="contact.html" class="btn btn-secondary">Book a Scoping Conversation <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+          </div>
+
+          <!-- SIDEBAR TOC -->
+          <aside class="toc" aria-label="Checklist areas">
+            <div class="toc__title">Control Areas</div>
+            <ul class="toc__list">
+              <li class="toc__item"><a href="#area-1"><span class="toc__item-num">1</span>Consent Architecture</a></li>
+              <li class="toc__item"><a href="#area-2"><span class="toc__item-num">2</span>Privacy Notice</a></li>
+              <li class="toc__item"><a href="#area-3"><span class="toc__item-num">3</span>Vendor Agreements</a></li>
+              <li class="toc__item"><a href="#area-4"><span class="toc__item-num">4</span>Data Flows</a></li>
+              <li class="toc__item"><a href="#area-5"><span class="toc__item-num">5</span>Data Principal Rights</a></li>
+              <li class="toc__item"><a href="#area-6"><span class="toc__item-num">6</span>Retention &amp; Erasure</a></li>
+              <li class="toc__item"><a href="#area-7"><span class="toc__item-num">7</span>Security Safeguards</a></li>
+              <li class="toc__item"><a href="#area-8"><span class="toc__item-num">8</span>Breach Preparedness</a></li>
+            </ul>
+            <div class="toc__divider"></div>
+            <div class="toc__cta">
+              <p style="font-size:13px; color:var(--text-muted); line-height:1.60; margin-bottom:14px;">Found gaps? An operational review tells you what is actually in place.</p>
+              <a href="contact.html" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Book a Scoping Conversation</a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ CTA ══════════════════════════════════════════════ -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="page-cta reveal">
+          <span style="font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px;">Get Started</span>
+          <h2>A checklist tells you what you think. An audit tells you what is.</h2>
+          <p style="text-align:justify; text-align-last:center;">Privara's operational assessments review your live systems, vendor contracts, and processes — and document exactly where your organisation stands against the Act's requirements.</p>
+          <a href="contact.html" class="btn btn-gold btn-lg">Book a Scoping Conversation <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="page-cta-trust" style="margin-top:28px;">No commitment required. Scope and pricing confirmed before work begins.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo" aria-label="Privara — Home">
+          <img src="assets/logo-footer.png" alt="Privara" width="110" height="36"
+               onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span style="display:none;align-items:center;gap:6px;font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.01em;">PRIVARA</span>
+        </a>
+        <p class="footer__tagline">Privacy. Governance. Trust.</p>
+        <div class="footer__contact">
+          <a href="mailto:contact@privara.co.in"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> contact@privara.co.in</a>
+          <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a4.5 4.5 0 00-4.5 4.5C2.5 9.5 7 13 7 13s4.5-3.5 4.5-7.5A4.5 4.5 0 007 1z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg> Pune, India</span>
+        </div>
+        <div class="footer__social"><a href="https://linkedin.com/company/privara-compliance" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 1h-11A1.5 1.5 0 001 2.5v11A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0013.5 1zM5.5 12.5h-2v-6h2v6zm-1-6.8a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4zm8 6.8h-2V9.3c0-.7-.3-1.3-1-1.3s-1.2.5-1.2 1.3v3.2h-2v-6h2v.9c.4-.6 1-.9 1.8-.9 1.4 0 2.4 1 2.4 2.9v3.1z"/></svg></a></div>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links"><li><a href="dpdpa-readiness-review.html">Readiness Review</a></li><li><a href="operational-audit.html">Operational Compliance Audit</a></li><li><a href="remediation.html">Remediation &amp; Governance Plan</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Industries</p>
+        <ul class="footer__links"><li><a href="dpdpa-compliance-for-startups.html">DPDPA for Startups</a></li><li><a href="dpdpa-compliance-for-fintech.html">DPDPA for Fintech</a></li><li><a href="dpdpa-compliance-for-saas.html">DPDPA for SaaS</a></li><li><a href="dpdpa-compliance-for-ecommerce.html">DPDPA for E-commerce</a></li><li><a href="dpdpa-compliance-for-edtech.html">DPDPA for EdTech</a></li><li><a href="dpdpa-compliance-for-healthcare.html">DPDPA for Healthcare</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links"><li><a href="what-is-dpdpa-compliance.html">What is DPDPA Compliance</a></li><li><a href="dpdpa-compliance-checklist.html">DPDPA Compliance Checklist</a></li><li><a href="dpdpa-penalty.html">DPDPA Penalty Guide</a></li><li><a href="about.html">About Privara</a></li><li><a href="contact.html">Book a Scoping Conversation</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Privara. All rights reserved.</p>
+      <nav class="footer__legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
+    </div>
+  </footer>
+
+  <script src="components.js" defer></script>
+
+<a href="https://wa.me/917389926321?text=Hi%20Privara%2C%20I%20would%20like%20to%20discuss%20DPDPA%20compliance%20for%20my%20organisation."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with Privara on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+    <path d="M14 2C7.373 2 2 7.373 2 14c0 2.127.557 4.126 1.532 5.858L2 26l4.302-1.508A11.94 11.94 0 0014 26c6.627 0 12-5.373 12-12S20.627 2 14 2z" fill="white"/>
+    <path d="M19.5 17.1c-.3-.15-1.767-.87-2.04-.97-.273-.1-.47-.15-.667.15-.198.3-.767.97-.94 1.167-.173.197-.347.22-.647.07-.3-.15-1.267-.467-2.413-1.49-.893-.797-1.497-1.78-1.673-2.08-.177-.3-.02-.463.132-.612.137-.135.3-.35.45-.525.15-.175.2-.3.3-.498.1-.2.05-.375-.025-.525-.075-.15-.667-1.61-.913-2.205-.24-.578-.484-.5-.667-.51-.173-.008-.37-.01-.567-.01-.197 0-.517.074-.787.374-.27.3-1.033 1.01-1.033 2.463 0 1.453 1.057 2.858 1.205 3.058.147.2 2.08 3.177 5.04 4.457.705.305 1.255.487 1.684.623.707.225 1.351.193 1.86.117.567-.084 1.747-.714 1.994-1.404.246-.69.246-1.28.172-1.404-.073-.122-.27-.196-.57-.346z" fill="#25D366"/>
+  </svg>
+</a>
+
+</body>
+</html>

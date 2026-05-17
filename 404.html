@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Page Not Found | Privara</title>
+  <meta name="description" content="The page you are looking for does not exist. Return to Privara's homepage or find what you need below." />
+  <meta name="author" content="Privara" />
+  <meta name="robots" content="noindex, follow" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Page Not Found | Privara" />
+  <meta name="twitter:description" content="The page you are looking for does not exist. Return to Privara's homepage or find what you need below." />
+  <meta name="twitter:image"       content="https://privara.co.in/assets/og-default.png" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Privara" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta property="og:url"         content="https://privara.co.in/404" />
+  <meta property="og:title"       content="Page Not Found | Privara" />
+  <meta property="og:description" content="The page you are looking for may have been moved, renamed, or never existed. Return to Privara's homepage or find what you need below." />
+  <meta property="og:image"       content="https://privara.co.in/assets/og-default.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="icon"             type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon"             type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180"                href="/assets/apple-touch-icon.png" />
+  <link rel="manifest"                                         href="/site.webmanifest" />
+  <meta name="theme-color" content="#0A1F3D" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" />
+  <link rel="stylesheet" href="/design-system.css" />
+
+  <style>
+    .skip-link { position:absolute; top:-100px; left:16px; background:var(--navy); color:#fff; padding:8px 16px; border-radius:4px; font-size:14px; font-weight:600; text-decoration:none; z-index:9999; transition:top 0.2s; }
+    .skip-link:focus { top:16px; }
+  </style>
+  <style>
+    /* Full-page navy layout */
+    .error-page {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Minimal nav for 404 */
+    .error-nav {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    @media (max-width: 600px) { .error-nav { padding: 20px 24px; } }
+
+    .error-nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .error-nav__logo-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .error-nav__logo-text span { color: var(--gold); }
+
+    /* Main content */
+    .error-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .error-inner {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    /* 404 display number */
+    .error-code {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(96px, 18vw, 160px);
+      font-weight: 700;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,164,76,0.25);
+      letter-spacing: -4px;
+      margin-bottom: 8px;
+      user-select: none;
+    }
+
+    .error-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .error-label::before,
+    .error-label::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: rgba(201,164,76,0.40);
+    }
+
+    .error-inner h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .error-inner p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 40px;
+      max-width: 440px;
+      margin-inline: auto;
+    }
+
+    /* CTA buttons */
+    .error-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    /* Quick links */
+    .error-links {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 40px;
+    }
+
+    .error-links__title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.30);
+      margin-bottom: 20px;
+    }
+
+    .error-links__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 560px) { .error-links__grid { grid-template-columns: 1fr; } }
+
+    .error-link-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-decoration: none;
+      text-align: left;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .error-link-card:hover {
+      background: rgba(201,164,76,0.08);
+      border-color: rgba(201,164,76,0.25);
+    }
+    .error-link-card__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      opacity: 0.80;
+    }
+    .error-link-card__title {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.35;
+    }
+
+    /* Footer strip */
+    .error-footer {
+      padding: 20px 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) { .error-footer { padding: 16px 24px; flex-direction: column; text-align: center; } }
+    .error-footer p { font-size: 13px; color: rgba(255,255,255,0.25); margin: 0; }
+    .error-footer nav { display: flex; gap: 20px; }
+    .error-footer nav a { font-size: 13px; color: rgba(255,255,255,0.30); text-decoration: none; transition: color 0.2s; }
+    .error-footer nav a:hover { color: var(--gold); }
+  </style>
+  <link rel="canonical" href="https://privara.co.in/404" />
+
+  <!-- Schema: Organization -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Privara","url":"https://privara.co.in","email":"contact@privara.co.in","logo":"https://privara.co.in/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}}
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privara.co.in"},{"@type":"ListItem","position":2,"name":"404 — Page Not Found","item":"https://privara.co.in/404"}]}
+  </script>
+</head>
+
+<body style="margin:0; padding:0;">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="error-page">
+
+    <!-- Minimal Nav -->
+    <nav class="error-nav" aria-label="Main navigation">
+      <a href="/" class="error-nav__logo" aria-label="Privara — Home">
+        <img src="assets/logo-navbar.png" alt="Privara" width="100" height="34" />
+      </a>
+      <a href="contact.html" class="btn btn-gold btn-sm">Book a Scoping Conversation</a>
+    </nav>
+
+    <!-- Main -->
+    <main class="error-main" id="main-content">
+      <div class="error-inner">
+
+        <div class="error-code" aria-hidden="true">404</div>
+
+        <div class="error-label">Page not found</div>
+
+        <h1>This page does not exist</h1>
+        <p>The page you are looking for may have been moved, renamed, or never existed. Here are some places to go instead.</p>
+
+        <div class="error-actions">
+          <a href="/" class="btn btn-gold btn-lg">Go to Homepage <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="contact.html" class="btn btn-secondary btn-lg" style="border-color:rgba(255,255,255,0.20); color:rgba(255,255,255,0.75);">Book a Scoping Conversation</a>
+        </div>
+
+        <!-- Quick links -->
+        <div class="error-links">
+          <div class="error-links__title">Or find what you need</div>
+          <div class="error-links__grid">
+            <a href="dpdpa-readiness-review.html" class="error-link-card">
+              <div class="error-link-card__label">Service</div>
+              <div class="error-link-card__title">DPDPA Readiness Review</div>
+            </a>
+            <a href="operational-compliance-audit.html" class="error-link-card">
+              <div class="error-link-card__label">Service</div>
+              <div class="error-link-card__title">Operational Compliance Audit</div>
+            </a>
+            <a href="remediation-governance-plan.html" class="error-link-card">
+              <div class="error-link-card__label">Service</div>
+              <div class="error-link-card__title">Remediation &amp; Governance Plan</div>
+            </a>
+            <a href="what-is-dpdpa-compliance.html" class="error-link-card">
+              <div class="error-link-card__label">Resource</div>
+              <div class="error-link-card__title">What is DPDPA Compliance?</div>
+            </a>
+            <a href="dpdpa-compliance-checklist.html" class="error-link-card">
+              <div class="error-link-card__label">Resource</div>
+              <div class="error-link-card__title">DPDPA Compliance Checklist</div>
+            </a>
+            <a href="about.html" class="error-link-card">
+              <div class="error-link-card__label">Company</div>
+              <div class="error-link-card__title">About Privara</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer strip -->
+    <footer class="error-footer" role="contentinfo">
+      <p>&copy; 2026 Privara. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </footer>
+
+  </div>
+
+  <script src="/components.js" defer></script>
+</body>
+</html>
