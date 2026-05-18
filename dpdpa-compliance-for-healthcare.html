@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>DPDPA Compliance for Healthcare India | Privara</title>
+  <meta name="description" content="DPDPA compliance for Indian healthcare organisations — how the Act applies to patient data, where it intersects with DISHA, and what hospitals, health-tech platforms, and diagnostic providers must implement operationally." />
+  <meta name="keywords" content="DPDPA compliance healthcare India, DPDPA health data, DPDPA for hospitals India, DPDPA healthtech, patient data compliance India, DISHA DPDPA" />
+  <meta name="author" content="Privara" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://privara.co.in/dpdpa-compliance-for-healthcare" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="Privara" />
+  <meta property="og:url"         content="https://privara.co.in/dpdpa-compliance-for-healthcare" />
+  <meta property="og:title"       content="DPDPA Compliance for Healthcare India | Privara" />
+  <meta property="og:description" content="How the DPDPA applies to patient data in India, where it intersects with DISHA, and what healthcare organisations must implement operationally." />
+  <meta property="og:image"       content="https://privara.co.in/assets/og-default.png" />
+<meta name="twitter:card"       content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon"    sizes="180x180"  href="assets/apple-touch-icon.png" />
+  <link rel="manifest"                              href="site.webmanifest" />
+  <meta name="theme-color" content="#0A1F3D" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" />
+  <link rel="stylesheet" href="design-system.css" />
+
+  <style>
+    .page-hero {
+      background: var(--navy);
+      padding: calc(var(--nav-h) + 72px) 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: ''; position: absolute;
+      bottom: -1px; left: 0; right: 0; height: 60px;
+      background: var(--bg-white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero__label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .page-hero__label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .page-hero h1 { color: #fff; max-width: 760px; margin-bottom: 20px; }
+    .page-hero__sub { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,0.65); max-width: 620px; margin-bottom: 32px; }
+    .page-hero__meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .page-hero__meta-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.45); }
+    .page-hero__meta-item svg { color: var(--gold); }
+
+    /* Article layout */
+    .article-layout { display: grid; grid-template-columns: 1fr 260px; gap: 64px; align-items: start; }
+    @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; } }
+
+    /* Prose */
+    .article-body h2 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: var(--navy); margin-top: 56px; margin-bottom: 16px; padding-top: 40px; border-top: 1px solid var(--border-light); }
+    .article-body h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .article-body h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; color: var(--navy); margin-top: 32px; margin-bottom: 10px; }
+    .article-body p { font-size: 16px; line-height: 1.85; color: var(--text-muted); margin-bottom: 18px; text-align: left; }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+    .article-body a { color: var(--navy); font-weight: 600; text-underline-offset: 3px; }
+    .article-body a:hover { color: var(--gold); }
+
+    /* Callout */
+    .callout { background: var(--bg-gold-tint); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 24px 0; font-size: 15px; line-height: 1.70; color: var(--text-primary); }
+    .callout strong { color: var(--navy); }
+
+    /* Warning callout */
+    .callout--warning { background: rgba(192,57,43,0.06); border-left-color: #c0392b; }
+    .callout--warning strong { color: #c0392b; }
+
+    /* Obligation list */
+    .obligation-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+    .obligation-item { display: flex; gap: 18px; align-items: flex-start; padding: 20px 24px; border-bottom: 1px solid var(--border-light); background: #fff; transition: background 0.2s; }
+    .obligation-item:last-child { border-bottom: none; }
+    .obligation-item:hover { background: var(--bg-section); }
+    .obligation-item__num { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: rgba(201,164,76,0.40); flex-shrink: 0; width: 28px; line-height: 1; margin-top: 2px; }
+    .obligation-item__title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .obligation-item__body { font-size: 14px; line-height: 1.70; color: var(--text-muted); text-align: left; }
+    .obligation-item__ref { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+
+    /* Comparison table */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-light); }
+    .compare-table th { background: var(--navy); color: rgba(255,255,255,0.70); font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; padding: 13px 18px; text-align: left; }
+    .compare-table td { padding: 15px 18px; font-size: 14px; color: var(--text-muted); border-bottom: 1px solid var(--border-light); line-height: 1.60; vertical-align: top; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--bg-section); }
+    .compare-table td:first-child { font-weight: 600; color: var(--text-primary); width: 30%; }
+
+    /* Sector strip */
+    .sector-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+    .sector-pill { padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; background: var(--bg-section); border: 1px solid var(--border-light); color: var(--text-muted); text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .sector-pill:hover { border-color: var(--border-gold); background: var(--bg-gold-tint); color: var(--navy); }
+    .sector-pill--active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    /* TOC */
+    .toc { position: sticky; top: calc(var(--nav-h) + 32px); background: var(--bg-section); border: 1px solid var(--border-light); border-radius: 12px; padding: 28px; }
+    .toc__title { font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-light); margin-bottom: 16px; }
+    .toc__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+    .toc__item a { font-size: 13px; color: var(--text-muted); text-decoration: none; display: block; padding: 6px 10px; border-radius: 6px; line-height: 1.45; transition: background 0.2s, color 0.2s; }
+    .toc__item a:hover { background: var(--bg-gold-tint); color: var(--navy); }
+    .toc__divider { height: 1px; background: var(--border-light); margin: 12px 0; }
+    @media (max-width: 1024px) { .toc { display: none; } }
+
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.4); z-index: 9998;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 24px rgba(37,211,102,0.5); }
+
+    /* Full-width CTA section */
+    .page-cta-section {
+      background: var(--navy); padding-block: 96px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,164,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,164,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+    .page-cta-inner {
+      position: relative; z-index: 1; max-width: 600px;
+      margin-inline: auto; padding-inline: var(--container-pad);
+    }
+    .page-cta-inner h2 { font-family: 'Fraunces', serif; font-size: clamp(26px,4vw,38px); font-weight: 600; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+    .page-cta-inner p  { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.75; margin-bottom: 36px; text-align: justify; text-align-last: center; }
+    .page-cta-trust { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.30); }
+@media (max-width: 768px) {
+  * { box-sizing: border-box !important; }
+  body { overflow-x: hidden !important; }
+  .page-hero {
+    padding-top: calc(var(--nav-h) + 40px) !important;
+    padding-bottom: 48px !important;
+    overflow-x: hidden !important;
+  }
+  .page-hero h1 {
+    font-size: clamp(26px, 7vw, 38px) !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  .page-hero__sub {
+    font-size: 16px !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+  .page-hero__tags { flex-wrap: wrap !important; }
+  .page-hero__meta { flex-direction: column !important; gap: 10px !important; }
+  .page-cta {
+    padding: 32px 20px !important;
+    border-radius: 12px !important;
+  }
+  .page-cta h2 {
+    font-size: clamp(22px, 6vw, 32px) !important;
+    word-break: break-word !important;
+  }
+  .page-cta p {
+    font-size: 15px !important;
+    max-width: 100% !important;
+  }
+  .btn-lg {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .btn { white-space: normal !important; word-break: normal !important; }
+  h2, h3, h4 { word-break: normal !important; overflow-wrap: normal !important; }
+  p, li { overflow-wrap: normal !important; word-break: normal !important; }
+  .section { padding-block: 48px !important; }
+  .container { padding-inline: 16px !important; }
+}
+  
+
+/* ─────────────────────────────────────────
+   HEALTHCARE MOBILE FIXES
+───────────────────────────────────────── */
+
+.compare-table-wrapper{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.compare-table{
+  min-width:720px;
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+@media(max-width:768px){
+
+  .related-grid{
+    grid-template-columns:1fr;
+  }
+
+  .compare-table th,
+  .compare-table td{
+    padding:14px 16px !important;
+    font-size:13px !important;
+  }
+
+  .article-body p,
+  .obligation-item__body{
+    text-align:left !important;
+  }
+
+}
+
+</style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Privara","url":"https://privara.co.in","email":"contact@privara.co.in","logo":"https://privara.co.in/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"DPDPA Compliance for Healthcare India","description":"How the DPDPA applies to patient data in India, where it intersects with DISHA, and what healthcare organisations must implement operationally.","author":{"@type":"Organization","name":"Privara","url":"https://privara.co.in"},"publisher":{"@type":"Organization","name":"Privara","url":"https://privara.co.in","logo":{"@type":"ImageObject","url":"https://privara.co.in/assets/logo.png"}},"url":"https://privara.co.in/dpdpa-compliance-for-healthcare","inLanguage":"en-IN"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privara.co.in"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://privara.co.in"},{"@type":"ListItem","position":3,"name":"DPDPA for Healthcare","item":"https://privara.co.in/dpdpa-compliance-for-healthcare"}]}
+  </script>
+</head>
+
+<body class="page-body">
+  <a href="#main-content" class="skip-link" style="position:absolute;top:-100px;left:16px;background:var(--navy);color:#fff;padding:8px 16px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;z-index:9999;transition:top 0.2s;">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner" style="max-width: 100%; padding-inline: clamp(16px, 4vw, 64px);">
+      <a href="index.html" class="nav__logo" aria-label="Privara — Home"><img src="assets/logo-navbar.png" alt="Privara" width="120" height="40"
+             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <span style="display:none;align-items:center;gap:6px;font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--navy);letter-spacing:-0.01em;">PRIVARA</span></a>
+      <ul class="nav__menu" role="list">
+        <li class="nav__item">
+          <a href="#" class="nav__link" aria-haspopup="true">Services <svg class="nav__chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dropdown" role="menu">
+            <a href="dpdpa-readiness-review.html" class="nav__dropdown-link" role="menuitem">
+              <svg class="nav__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 2H3a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1z" stroke="currentColor" stroke-width="1.2"/><path d="M5 6h6M5 9h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              Readiness Review
+            </a>
+            <a href="operational-audit.html" class="nav__dropdown-link" role="menuitem">
+              <svg class="nav__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Operational Audit
+            </a>
+            <a href="remediation.html" class="nav__dropdown-link" role="menuitem">
+              <svg class="nav__dropdown-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 12l4-4 3 3 5-7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Remediation Plan
+            </a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link nav__link--active" aria-haspopup="true">Industries <svg class="nav__chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dropdown" role="menu">
+            <a href="dpdpa-compliance-for-startups.html"   class="nav__dropdown-link" role="menuitem">Startups</a>
+            <a href="dpdpa-compliance-for-fintech.html"    class="nav__dropdown-link" role="menuitem">Fintech</a>
+            <a href="dpdpa-compliance-for-saas.html"       class="nav__dropdown-link" role="menuitem">SaaS</a>
+            <a href="dpdpa-compliance-for-ecommerce.html"  class="nav__dropdown-link" role="menuitem">E-commerce</a>
+            <a href="dpdpa-compliance-for-edtech.html"     class="nav__dropdown-link" role="menuitem">EdTech</a>
+            <a href="dpdpa-compliance-for-healthcare.html" class="nav__dropdown-link" role="menuitem">Healthcare</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link" aria-haspopup="true">Resources <svg class="nav__chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dropdown" role="menu">
+            <a href="what-is-dpdpa-compliance.html"   class="nav__dropdown-link" role="menuitem">What is DPDPA</a>
+            <a href="dpdpa-compliance-checklist.html" class="nav__dropdown-link" role="menuitem">Compliance Checklist</a>
+            <a href="dpdpa-penalty.html"              class="nav__dropdown-link" role="menuitem">Penalty Guide</a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="about.html"   class="nav__link">About</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__cta"><a href="contact.html" class="btn btn-primary btn-sm">Book a Scoping Conversation</a></div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobile-nav">
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Services</div>
+        <a href="dpdpa-readiness-review.html"       class="nav__mobile-link">Readiness Review</a>
+        <a href="operational-audit.html"  class="nav__mobile-link">Operational Compliance Audit</a>
+        <a href="remediation.html"   class="nav__mobile-link">Remediation &amp; Governance Plan</a>
+      </div>
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Industries</div>
+        <a href="dpdpa-compliance-for-startups.html"   class="nav__mobile-link">Startups</a>
+        <a href="dpdpa-compliance-for-fintech.html"    class="nav__mobile-link">Fintech</a>
+        <a href="dpdpa-compliance-for-saas.html"       class="nav__mobile-link">SaaS</a>
+        <a href="dpdpa-compliance-for-ecommerce.html"  class="nav__mobile-link">E-commerce</a>
+        <a href="dpdpa-compliance-for-edtech.html"     class="nav__mobile-link">EdTech</a>
+        <a href="dpdpa-compliance-for-healthcare.html" class="nav__mobile-link">Healthcare</a>
+      </div>
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Resources</div>
+        <a href="what-is-dpdpa-compliance.html"   class="nav__mobile-link">What is DPDPA</a>
+        <a href="dpdpa-compliance-checklist.html" class="nav__mobile-link">Compliance Checklist</a>
+        <a href="dpdpa-penalty.html"              class="nav__mobile-link">Penalty Guide</a>
+      </div>
+      <div class="nav__mobile-section">
+        <div class="nav__mobile-label">Company</div>
+       <a href="about.html"   class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+      </div>
+      <a href="contact.html" class="btn btn-primary nav__mobile-cta">Book a Scoping Conversation</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="page-hero" aria-label="DPDPA for Healthcare">
+      <div class="container">
+        <div class="page-hero__label">Sector Guide — Healthcare</div>
+        <h1>DPDPA Compliance for Healthcare</h1>
+        <p class="page-hero__sub">How the Act applies to patient data, where it intersects with DISHA obligations, and what hospitals, health-tech platforms, and diagnostic providers must implement operationally.</p>
+        <div class="page-hero__meta">
+          <span class="page-hero__meta-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a4.5 4.5 0 00-4.5 4.5C2.5 9.5 7 13 7 13s4.5-3.5 4.5-7.5A4.5 4.5 0 007 1z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Privara
+          </span>
+          <span class="page-hero__meta-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5h12M4 1v2M10 1v2" stroke="currentColor" stroke-width="1.2"/></svg>
+            DPDPA Act 2023 &amp; Rules 2025
+          </span>
+          <span class="page-hero__meta-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 4.5v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            12 min read
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="article-layout">
+
+          <article class="article-body">
+
+            <div class="sector-strip">
+              <a href="dpdpa-compliance-for-startups.html"   class="sector-pill">Startups</a>
+              <a href="dpdpa-compliance-for-fintech.html"    class="sector-pill">Fintech</a>
+              <a href="dpdpa-compliance-for-ecommerce.html"  class="sector-pill">E-commerce</a>
+              <a href="dpdpa-compliance-for-edtech.html"     class="sector-pill">EdTech</a>
+              <span class="sector-pill sector-pill--active">Healthcare</span>
+            </div>
+
+            <h2 id="why-healthcare">Why healthcare organisations face the highest DPDPA exposure</h2>
+            <p>Of all the sectors in India subject to the DPDPA, healthcare organisations face the most significant compliance exposure — for two reasons that operate simultaneously.</p>
+            <p>First, health data is among the most sensitive categories of personal data that the Act governs. Patient records, diagnostic results, prescription histories, and health platform usage data all fall squarely within the Act's definition of personal data — and the sensitivity of this data means that breaches, consent failures, and processing violations carry both the highest penalty exposure and the most direct harm to the individuals affected.</p>
+            <p>Second, healthcare organisations in India are subject to an overlapping regulatory environment. The DPDPA sits alongside the Digital Information Security in Healthcare Act (DISHA), the National Digital Health Mission (NDHM) framework, and existing obligations under the Information Technology Act. Managing compliance across these frameworks simultaneously requires an understanding of where they align, where they differ, and where obligations are additive rather than redundant.</p>
+
+            <div class="callout--warning callout">
+              <strong>Maximum penalty exposure:</strong> Failure to implement reasonable security safeguards resulting in a personal data breach carries a maximum penalty of ₹250 crore under the DPDPA. For healthcare organisations processing sensitive health data at scale, this is the single highest-risk compliance gap.
+            </div>
+
+            <h2 id="what-is-health-data">What counts as health data under DPDPA</h2>
+            <p>The Act does not create a separate legal category for health data — all personal data is subject to the Act's requirements, and health data is personal data. However, health data warrants specific attention because of the sensitivity of the information and the operational complexity of how it is collected, stored, and shared in healthcare settings.</p>
+            <p>Health data covered by the Act includes — but is not limited to:</p>
+            <p><strong>Clinical data</strong> — diagnoses, treatment records, prescription histories, surgical records, lab results, imaging data, discharge summaries, and any other data generated in the course of clinical care.</p>
+            <p><strong>Health platform data</strong> — appointment bookings, symptom inputs, health questionnaire responses, telemedicine consultation records, health monitoring data from connected devices, and any other data collected through digital health products.</p>
+            <p><strong>Administrative health data</strong> — patient registration information, insurance details, payment records where linked to healthcare services, and contact details collected in a healthcare context.</p>
+            <p><strong>Genetic and biometric data</strong> — where collected in a healthcare context, these categories carry additional sensitivity obligations and should be treated with the highest level of data governance controls.</p>
+
+            <h2 id="dpdpa-disha">DPDPA and DISHA — where they overlap and where they differ</h2>
+            <p>DISHA — the Digital Information Security in Healthcare Act — is a draft framework specifically designed for health data in India. At the time of writing, DISHA has not been enacted as law. The DPDPA is the operative legislation. However, the two frameworks share significant conceptual overlap, and healthcare organisations should understand both.</p>
+
+            <div class="compare-table-wrapper"><table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>DPDPA 2023 (operative)</th>
+                  <th>DISHA (draft)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Scope</td>
+                  <td>All personal data of Indian residents</td>
+                  <td>Health data specifically — narrower scope, deeper obligations</td>
+                </tr>
+                <tr>
+                  <td>Consent</td>
+                  <td>Free, specific, informed, unambiguous — required for each purpose</td>
+                  <td>Explicit consent required for health data — higher standard than DPDPA baseline</td>
+                </tr>
+                <tr>
+                  <td>Data localisation</td>
+                  <td>Not mandated generally — rules may specify categories</td>
+                  <td>Health data localisation within India required</td>
+                </tr>
+                <tr>
+                  <td>Breach notification</td>
+                  <td>Mandatory notification to Board and affected individuals</td>
+                  <td>Mandatory — with shorter prescribed timelines</td>
+                </tr>
+                <tr>
+                  <td>Enforcement body</td>
+                  <td>Data Protection Board of India</td>
+                  <td>National Electronic Health Authority (proposed)</td>
+                </tr>
+                <tr>
+                  <td>Current status</td>
+                  <td>In force — Rules notified January 2025</td>
+                  <td>Draft — not yet enacted</td>
+                </tr>
+              </tbody>
+            </table></div>
+
+            <div class="callout">
+              <strong>Practical implication:</strong> Healthcare organisations that build DPDPA-compliant data governance now are simultaneously building the foundation for DISHA compliance when it is enacted. The consent, processing, and security architecture required under DPDPA closely mirrors what DISHA will require — making early investment in DPDPA compliance a forward-looking decision, not just a reactive one.
+            </div>
+
+            <h2 id="core-obligations">Core DPDPA obligations for healthcare organisations</h2>
+
+            <div class="obligation-list">
+              <div class="obligation-item">
+                <div class="obligation-item__num">1</div>
+                <div>
+                  <div class="obligation-item__title">Patient consent at every data collection point</div>
+                  <p class="obligation-item__body">Every digital touchpoint where patient data is collected — appointment booking flows, health questionnaires, telemedicine platforms, health monitoring apps — must obtain valid consent that is free, specific, informed, and unambiguous. The consent must be separate from any terms of service acceptance. In clinical settings where multiple data purposes exist — treatment, billing, research — each purpose requires its own consent mechanism.</p>
+                  <span class="obligation-item__ref">Section 6 — DPDPA Act 2023</span>
+                </div>
+              </div>
+              <div class="obligation-item">
+                <div class="obligation-item__num">2</div>
+                <div>
+                  <div class="obligation-item__title">Privacy notice meeting the Act's specific requirements</div>
+                  <p class="obligation-item__body">Healthcare organisations must provide a notice that specifies the personal data collected, the purpose of processing for each data category, how patient rights can be exercised, the identity and contact details of the grievance officer, and how consent can be withdrawn. Generic healthcare privacy notices and notices adapted from hospital templates frequently fail to meet this standard — particularly the requirement to specify purposes for each category of health data collected.</p>
+                  <span class="obligation-item__ref">Section 5 — DPDPA Act 2023</span>
+                </div>
+              </div>
+              <div class="obligation-item">
+                <div class="obligation-item__num">3</div>
+                <div>
+                  <div class="obligation-item__title">Data Processing Agreements with all health-tech vendors</div>
+                  <p class="obligation-item__body">Every third-party platform processing patient data — electronic health record systems, telemedicine platforms, diagnostic software, cloud providers, laboratory information systems, hospital management systems — must operate under a written Data Processing Agreement that specifically governs data handling. Commercial software licences and standard SaaS terms do not satisfy this requirement. This gap is extremely common among both hospitals and health-tech companies.</p>
+                  <span class="obligation-item__ref">Section 8(3) — DPDPA Act 2023</span>
+                </div>
+              </div>
+              <div class="obligation-item">
+                <div class="obligation-item__num">4</div>
+                <div>
+                  <div class="obligation-item__title">Strict purpose limitation for health data</div>
+                  <p class="obligation-item__body">Health data may only be used for the specific purposes disclosed at collection. Using patient data for secondary purposes — research, anonymised analytics, product improvement, partner data sharing — without separate, specific consent is a violation. Healthcare organisations that aggregate patient data for research or population health analytics must ensure that each secondary use is separately consented to and disclosed.</p>
+                  <span class="obligation-item__ref">Section 6(1) — DPDPA Act 2023</span>
+                </div>
+              </div>
+              <div class="obligation-item">
+                <div class="obligation-item__num">5</div>
+                <div>
+                  <div class="obligation-item__title">Operational patient rights processes</div>
+                  <p class="obligation-item__body">Patients have the right to access their health data, correct inaccuracies, and request erasure. These rights must be operationally fulfillable — meaning the process must work across all systems holding the patient's data, including EHR systems, diagnostic databases, billing systems, and any third-party platforms. A patient rights request that results in deletion from one system but not others does not satisfy the obligation.</p>
+                  <span class="obligation-item__ref">Sections 11–13 — DPDPA Act 2023</span>
+                </div>
+              </div>
+              <div class="obligation-item">
+                <div class="obligation-item__num">6</div>
+                <div>
+                  <div class="obligation-item__title">Heightened security safeguards for health data</div>
+                  <p class="obligation-item__body">Given the sensitivity of health data, the Act's "reasonable security safeguards" requirement must be interpreted stringently. This includes encryption at rest and in transit for all patient data, strict role-based access controls, audit logs for data access, and security measures that extend to all processors handling health data. Healthcare organisations that have implemented security for their primary clinical systems but not for administrative systems, analytics tools, or third-party platforms have a material gap.</p>
+                  <span class="obligation-item__ref">Section 8(5) — DPDPA Act 2023</span>
+                </div>
+              </div>
+              <div class="obligation-item">
+                <div class="obligation-item__num">7</div>
+                <div>
+                  <div class="obligation-item__title">Breach notification — especially critical for health data</div>
+                  <p class="obligation-item__body">A personal data breach involving health data requires notification to both the Data Protection Board and the affected patients. Given the sensitivity of the data involved, the reputational and regulatory consequences of a health data breach are significantly greater than in most other sectors. Healthcare organisations must have a documented, practiced breach response process — not merely a policy — that can be activated immediately.</p>
+                  <span class="obligation-item__ref">Section 8(6) — DPDPA Act 2023</span>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="healthtech-specific">Specific considerations for health-tech platforms</h2>
+            <p>Health-tech platforms — telemedicine providers, digital diagnostics, health monitoring apps, wellness platforms, and health data aggregators — face a distinct set of compliance challenges compared to traditional healthcare providers.</p>
+
+            <h3>Consent at digital scale</h3>
+            <p>Health-tech platforms collect personal and health data through digital flows at a scale and speed that traditional clinical consent processes were not designed for. The challenge is implementing consent mechanisms that are both legally valid under the Act and operationally compatible with product onboarding flows that prioritise low friction. These two objectives are reconcilable — but require intentional design, not retrofit.</p>
+
+            <h3>Third-party integrations and health data flows</h3>
+            <p>Health-tech platforms typically integrate with a large number of third-party services — cloud providers, analytics tools, payment processors, diagnostic lab APIs, insurance verification services, and communications platforms. Each integration that involves personal data flow requires a Data Processing Agreement. The volume of integrations in a typical health-tech stack means this gap is almost universal among organisations that have not conducted a formal compliance review.</p>
+
+            <h3>Anonymisation and research use</h3>
+            <p>Many health-tech platforms use patient data for research, product improvement, or aggregate health analytics — on the assumption that anonymised data is outside the Act's scope. This assumption deserves careful scrutiny. Truly anonymised data — where re-identification is not technically feasible — may be outside scope. But pseudonymised data, data sets that can be re-identified through combination with other data, and data processed under inadequate anonymisation methods remain personal data under the Act.</p>
+
+            <h2 id="who-is-affected">Which healthcare organisations this applies to</h2>
+            <p>The DPDPA applies to any organisation that processes personal data of Indian residents in a digital form. In the healthcare sector, this includes — but is not limited to:</p>
+            <p><strong>Hospitals and multi-specialty clinics</strong> that maintain electronic patient records, process appointment bookings digitally, or use third-party platforms for any aspect of clinical or administrative operations.</p>
+            <p><strong>Diagnostic centres and pathology labs</strong> that deliver results digitally, maintain patient records electronically, or use laboratory information systems connected to patient data.</p>
+            <p><strong>Telemedicine platforms</strong> — including platforms connecting patients to doctors, mental health platforms, and any service delivering clinical consultations digitally.</p>
+            <p><strong>Health monitoring and wellness apps</strong> that collect symptom data, health metrics, fitness data, or any other health-related personal data from users.</p>
+            <p><strong>Health insurance platforms and TPAs</strong> that process claims data, health records, and other sensitive personal data in the course of insurance administration.</p>
+            <p><strong>Health data aggregators and analytics platforms</strong> that process health data from multiple sources for research, population health, or commercial purposes.</p>
+
+            <h2 id="where-to-start">Where to start</h2>
+            <p>For healthcare organisations, the starting point is an accurate, documented picture of how personal and health data flows through your organisation — across clinical systems, administrative systems, third-party platforms, and research or analytics use cases.</p>
+            <p>This is more complex than in most other sectors, because the data flows in healthcare are more numerous, the vendor ecosystem is larger, and the sensitivity of the data means that gaps carry higher consequences. An informal self-assessment is unlikely to identify all material gaps — particularly in vendor agreement coverage and secondary data use.</p>
+            <p>Privara's <a href="dpdpa-readiness-review.html">DPDPA Readiness Review</a> is designed to provide exactly this picture — a structured operational assessment in 10–20 working days, with documented findings and a clear set of immediate priority actions. For healthcare organisations with more complex data environments, the <a href="operational-audit.html">Operational Compliance Audit</a> provides a more comprehensive eight-area assessment.</p>
+
+            <h2 id="other-sectors">DPDPA in other sectors</h2>
+            <div class="sector-strip">
+              <a href="dpdpa-compliance-for-startups.html"   class="sector-pill">Startups</a>
+              <a href="dpdpa-compliance-for-fintech.html"    class="sector-pill">Fintech</a>
+              <a href="dpdpa-compliance-for-ecommerce.html"  class="sector-pill">E-commerce</a>
+              <a href="dpdpa-compliance-for-edtech.html"     class="sector-pill">EdTech</a>
+              <span class="sector-pill sector-pill--active">Healthcare</span>
+            </div>
+
+          </article>
+
+          <!-- TOC -->
+          <aside class="toc" aria-label="Table of contents">
+            <div class="toc__title">On this page</div>
+            <ul class="toc__list">
+              <li class="toc__item"><a href="#why-healthcare">Why healthcare faces highest exposure</a></li>
+              <li class="toc__item"><a href="#what-is-health-data">What counts as health data</a></li>
+              <li class="toc__item"><a href="#dpdpa-disha">DPDPA vs DISHA</a></li>
+              <li class="toc__item"><a href="#core-obligations">Core obligations</a></li>
+              <li class="toc__item"><a href="#healthtech-specific">Health-tech platforms</a></li>
+              <li class="toc__item"><a href="#who-is-affected">Who is affected</a></li>
+              <li class="toc__item"><a href="#where-to-start">Where to start</a></li>
+            </ul>
+            <div class="toc__divider"></div>
+            <div>
+              <p style="font-size:13px; color:var(--text-muted); line-height:1.60; margin-bottom:14px;">Health data compliance gaps carry the highest penalty exposure under the Act.</p>
+              <a href="contact.html" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Book a Scoping Conversation</a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="label">Related Resources</span>
+          <h2>Continue reading</h2>
+        </div>
+        <div class="related-grid" style="margin-top:40px;">
+          <a href="dpdpa-readiness-review.html" style="display:block;background:#fff;border:1px solid var(--border-light);border-radius:12px;padding:28px;text-decoration:none;transition:border-color 0.25s,transform 0.25s;" onmouseover="this.style.borderColor='var(--border-gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-light)';this.style.transform='none'" class="reveal">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Service</div>
+            <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px;">DPDPA Readiness Review</div>
+            <p style="font-size:14px;line-height:1.65;color:var(--text-muted);margin:0 0 14px;">Operational assessment in 10–20 working days.</p>
+            <span style="font-size:13px;font-weight:600;color:var(--gold);">Learn more →</span>
+          </a>
+          <a href="dpdpa-compliance-checklist.html" style="display:block;background:#fff;border:1px solid var(--border-light);border-radius:12px;padding:28px;text-decoration:none;transition:border-color 0.25s,transform 0.25s;" onmouseover="this.style.borderColor='var(--border-gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-light)';this.style.transform='none'" class="reveal">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Checklist</div>
+            <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px;">DPDPA Compliance Checklist</div>
+            <p style="font-size:14px;line-height:1.65;color:var(--text-muted);margin:0 0 14px;">Eight control areas — structured for operational review.</p>
+            <span style="font-size:13px;font-weight:600;color:var(--gold);">View checklist →</span>
+          </a>
+          <a href="dpdpa-penalty.html" style="display:block;background:#fff;border:1px solid var(--border-light);border-radius:12px;padding:28px;text-decoration:none;transition:border-color 0.25s,transform 0.25s;" onmouseover="this.style.borderColor='var(--border-gold)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-light)';this.style.transform='none'" class="reveal">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Reference</div>
+            <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px;">DPDPA Penalty Guide</div>
+            <p style="font-size:14px;line-height:1.65;color:var(--text-muted);margin:0 0 14px;">Full penalty schedule with maximum amounts per violation.</p>
+            <span style="font-size:13px;font-weight:600;color:var(--gold);">View guide →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="page-cta-section" aria-labelledby="cta-heading">
+      <div class="page-cta-inner">
+        <span class="label" style="color:rgba(255,255,255,0.40);display:block;margin-bottom:16px;">Get Started</span>
+        <h2 id="cta-heading">Health data compliance gaps carry the highest penalty exposure under the Act</h2>
+        <p>A scoping conversation costs nothing and commits you to nothing. We tell you honestly where your organisation stands and what needs to be addressed first.</p>
+        <a href="contact.html" class="btn btn-gold btn-lg">
+          Book a Scoping Conversation
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="page-cta-trust">No commitment required. Scope and pricing confirmed before work begins.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><img src="assets/logo-footer.png" alt="Privara" width="110" height="36"
+               onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span style="display:none;align-items:center;gap:6px;font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.01em;">PRIVARA</span></a>
+        <p class="footer__tagline">Privacy. Governance. Trust.</p>
+        <div class="footer__contact">
+          <a href="mailto:contact@privara.co.in"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> contact@privara.co.in</a>
+          <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a4.5 4.5 0 00-4.5 4.5C2.5 9.5 7 13 7 13s4.5-3.5 4.5-7.5A4.5 4.5 0 007 1z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg> Pune, India</span>
+        </div>
+        <div class="footer__social"><a href="https://linkedin.com/company/privara-compliance" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 1h-11A1.5 1.5 0 001 2.5v11A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0013.5 1zM5.5 12.5h-2v-6h2v6zm-1-6.8a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4zm8 6.8h-2V9.3c0-.7-.3-1.3-1-1.3s-1.2.5-1.2 1.3v3.2h-2v-6h2v.9c.4-.6 1-.9 1.8-.9 1.4 0 2.4 1 2.4 2.9v3.1z"/></svg></a></div>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links"><li><a href="dpdpa-readiness-review.html">Readiness Review</a></li><li><a href="operational-audit.html">Operational Compliance Audit</a></li><li><a href="remediation.html">Remediation &amp; Governance Plan</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Industries</p>
+        <ul class="footer__links"><li><a href="/dpdpa-compliance-for-startups">DPDPA for Startups</a></li><li><a href="/dpdpa-compliance-for-fintech">DPDPA for Fintech</a></li><li><a href="/dpdpa-compliance-for-saas">DPDPA for SaaS</a></li><li><a href="/dpdpa-compliance-for-ecommerce">DPDPA for E-commerce</a></li><li><a href="/dpdpa-compliance-for-edtech">DPDPA for EdTech</a></li><li><a href="/dpdpa-compliance-for-healthcare">DPDPA for Healthcare</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links"><li><a href="/dpdpa-compliance-for-startups">DPDPA for Startups</a></li><li><a href="/dpdpa-compliance-for-fintech">DPDPA for Fintech</a></li><li><a href="/dpdpa-compliance-for-saas">DPDPA for SaaS</a></li><li><a href="/dpdpa-compliance-for-ecommerce">DPDPA for E-commerce</a></li><li><a href="/dpdpa-compliance-for-edtech">DPDPA for EdTech</a></li><li><a href="/dpdpa-compliance-for-healthcare">DPDPA for Healthcare</a></li></ul>
+</div>
+      <div class="footer__col">
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links"><li><a href="what-is-dpdpa-compliance.html">What is DPDPA Compliance</a></li><li><a href="dpdpa-compliance-checklist.html">DPDPA Compliance Checklist</a></li><li><a href="dpdpa-penalty.html">DPDPA Penalty Guide</a></li><li><a href="about.html">About Privara</a></li><li><a href="contact.html">Book a Scoping Conversation</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Privara. All rights reserved.</p>
+      <nav class="footer__legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
+    </div>
+  </footer>
+
+  <script src="components.js" defer></script>
+
+<a href="https://wa.me/917389926321?text=Hi%20Privara%2C%20I%20would%20like%20to%20discuss%20DPDPA%20compliance%20for%20my%20organisation."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with Privara on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+    <path d="M14 2C7.373 2 2 7.373 2 14c0 2.127.557 4.126 1.532 5.858L2 26l4.302-1.508A11.94 11.94 0 0014 26c6.627 0 12-5.373 12-12S20.627 2 14 2z" fill="white"/>
+    <path d="M19.5 17.1c-.3-.15-1.767-.87-2.04-.97-.273-.1-.47-.15-.667.15-.198.3-.767.97-.94 1.167-.173.197-.347.22-.647.07-.3-.15-1.267-.467-2.413-1.49-.893-.797-1.497-1.78-1.673-2.08-.177-.3-.02-.463.132-.612.137-.135.3-.35.45-.525.15-.175.2-.3.3-.498.1-.2.05-.375-.025-.525-.075-.15-.667-1.61-.913-2.205-.24-.578-.484-.5-.667-.51-.173-.008-.37-.01-.567-.01-.197 0-.517.074-.787.374-.27.3-1.033 1.01-1.033 2.463 0 1.453 1.057 2.858 1.205 3.058.147.2 2.08 3.177 5.04 4.457.705.305 1.255.487 1.684.623.707.225 1.351.193 1.86.117.567-.084 1.747-.714 1.994-1.404.246-.69.246-1.28.172-1.404-.073-.122-.27-.196-.57-.346z" fill="#25D366"/>
+  </svg>
+</a>
+
+</body>
+</html>
